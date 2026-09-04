@@ -1,0 +1,5 @@
+oct_num=input("enter a number:")
+dec_num=int(oct_num,8)
+bina_num=bin(dec_num)
+print("decimal number is:",dec_num)
+print("binary number is:",bina_num)
