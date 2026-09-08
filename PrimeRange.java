@@ -1,40 +1,40 @@
 import java.util.Scanner;
-import java.util.ArrayList;
 
 class PrimeRange {
+
     public static void main(String args[]) {
+
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Enter the range to find prime numbers:");
+        System.out.println("Enter the starting number:");
         int start = sc.nextInt();
-        int end = sc.nextInt();
 
-        ArrayList<Integer> a = new ArrayList<>();
+        System.out.println("Enter the ending number:");
+        int end = sc.nextInt();
 
         System.out.println("Prime numbers between " + start + " and " + end + " are:");
 
         for (int i = start; i <= end; i++) {
-
-            boolean isPrime = true;
-
-            if (i < 2) {
-                isPrime = false;
-            }
-
-            for (int j = 2; j <= i / 2; j++) {
-                if (i % j == 0) {
-                    isPrime = false;
-                    break;
-                }
-            }
-
-            if (isPrime) {
-                a.add(i);
+            if (isPrime(i)) {
+                System.out.print(i + " ");
             }
         }
 
-        System.out.println(a);
-
         sc.close();
+    }
+
+    static boolean isPrime(int n) {
+
+        if (n < 2) {
+            return false;
+        }
+
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
