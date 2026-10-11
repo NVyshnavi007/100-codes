@@ -6,4 +6,4 @@ for i in range(len(arr)):
         res=max(res,mul)
         mul*=arr[j]
     res=max(res,mul)
-print(res)
+print(res) 
